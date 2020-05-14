@@ -1,0 +1,30 @@
+apiVersion: v1
+entries:
+  operator-core:
+  - digest: 9a40e1484b12d705954407494b542963dde1db20c6f9334e00e97ab08bb39386
+    maintainers:
+    - email: <your@email.com>
+      name: Your name
+    name: operator-core
+    operatorVersion: 1.0.0
+    urls:
+    - http://kudo-repository-demos.storage.googleapis.com/operator-core-1.0.0.tgz
+  operator-extras:
+  - digest: 11aca7b0e3b4e6ebc7a7ea4b9c15691c4a2b8eab9999e93723fea8c5586e4587
+    maintainers:
+    - email: <your@email.com>
+      name: Your name
+    name: operator-extras
+    operatorVersion: 1.0.0
+    urls:
+    - http://kudo-repository-demos.storage.googleapis.com/operator-extras-1.0.0.tgz
+  operator-pre-reqs:
+  - digest: 5b3336a56ae0d030d5d3c5b8e7daf8a0af3dea88958ee8deed66060b9660f480
+    maintainers:
+    - email: <your@email.com>
+      name: Your name
+    name: operator-pre-reqs
+    operatorVersion: 1.0.0
+    urls:
+    - http://kudo-repository-demos.storage.googleapis.com/operator-pre-reqs-1.0.0.tgz
+generated: "2020-05-14T15:45:01.925422+02:00"

@@ -1,0 +1,34 @@
+apiVersion: kubeaddons.mesosphere.io/v1beta1
+kind: Addon
+metadata:
+  name: operator
+  labels:
+    kubeaddons.mesosphere.io/name: operator
+  annotations:
+    catalog.kubeaddons.mesosphere.io/addon-revision: "2.4.0-3"
+    appversion.kubeaddons.mesosphere.io/operator: "2.4.0"
+spec:
+  kubernetes:
+    minSupportedVersion: v1.16.0
+  cloudProvider:
+    - name: aws
+      enabled: true
+    - name: docker
+      enabled: true
+    - name: none
+      enabled: true
+  kudoReferences:
+    - package: operator-pre-reqs
+      name: operator-pre-reqs
+      namespace: kube-system
+      repo: http://kudo-repository-demos.storage.googleapis.com
+      version: 1.0.0
+      parameters: |
+        property: 3
+    - package: operator-core
+      repo: http://kudo-repository-demos.storage.googleapis.com
+      version: 1.0.0
+    - package: operator-extras
+      namespace: kubeaddons
+      repo: http://kudo-repository-demos.storage.googleapis.com
+      version: 1.0.0

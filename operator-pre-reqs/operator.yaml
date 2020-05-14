@@ -1,0 +1,24 @@
+apiVersion: kudo.dev/v1beta1
+name: "operator-pre-reqs"
+operatorVersion: "1.0.0"
+kubernetesVersion: 1.13.0
+maintainers:
+  - name: Your name
+    email: <your@email.com>
+url: https://kudo.dev
+tasks:
+  - name: pre-reqs
+    kind: Apply
+    spec:
+      resources:
+        - configmap.yaml
+plans:
+  deploy:
+    strategy: serial
+    phases:
+      - name: main
+        strategy: parallel
+        steps:
+          - name: everything
+            tasks:
+              - pre-reqs
